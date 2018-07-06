@@ -27,7 +27,7 @@ module.exports = function({ ratios, variants } = { ratios: {}, variants: [] }) {
       },
       {
         ['[class*="o-aspect-ratio"]::before']: {
-          content: '',
+          content: `''`,
           float: 'left',
           paddingTop: '100%',
           position: 'relative',
