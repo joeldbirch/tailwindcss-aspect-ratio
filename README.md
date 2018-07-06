@@ -11,26 +11,24 @@ npm install --save-dev tailwindcss-aspect-ratio
 
 ## Usage
 
-The aspect ratio plugin exposes options for you to use. Here is the example for adding it to your project plugins
+In addition to useful defaults, the aspect ratio plugin exposes options for you to add further ratios. Here is the example for adding it to your project plugins
 
 ```js
 require('tailwindcss-aspect-ratio')({
   ratios: {
-    'square': [1, 1],
-    '16/9': [16, 9],
-    '4/3': [4, 3],
     '21/9': [21, 9],
-  }
+  },
 })
 ```
 
 This configuration would create the following classes:
 
 ```
-.aspect-ratio-square { padding-top: 100%; }
-.aspect-ratio-16/9 { padding-top: 56.25%; }
-.aspect-ratio-4/3 { padding-top: 75%; }
-.aspect-ratio-21/9 { padding-top: 42.86%; }
+.o-aspect-ratio // "square" by default
+.o-aspect-ratio-16/9
+.o-aspect-ratio-2/1
+.o-aspect-ratio-4/3
+.o-aspect-ratio-21/9
 ```
 
 The plugins accepts an object where the key is the suffix of the class name and the the value is an array of width and height `[{width}, {height}]`.
@@ -42,7 +40,7 @@ As per the [tailwind plugin docs](https://tailwindcss.com/docs/plugins/) you are
 ```js
 require('tailwindcss-aspect-ratio')({
   ratios: {
-    'square': [1, 1],
+    square: [1, 1],
     '16/9': [16, 9],
     '4/3': [4, 3],
     '21/9': [21, 9],
